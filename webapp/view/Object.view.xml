@@ -18,7 +18,12 @@
         </semantic:titleHeading>
 
         <semantic:headerContent>
-            <ObjectNumber />
+            <ObjectNumber
+                number="{
+                    path: 'CategoryID',
+                    formatter: '.formatter.numberUnit'
+                }"
+                unit="{Description}" />
         </semantic:headerContent>
 
         <semantic:sendEmailAction>

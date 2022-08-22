@@ -1,84 +1,254 @@
 <mvc:View
-    controllerName="com.sap.byjus.payments.controller.Worklist"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns:semantic="sap.f.semantic">
+           controllerName="com.sap.byjus.payments.controller.Worklist"
+           xmlns:mvc="sap.ui.core.mvc"
+		   xmlns="sap.m"
+		   xmlns:html="http://www.w3.org/1999/xhtml"
+		   xmlns:uxap="sap.uxap"
+		   xmlns:core="sap.ui.core"
+		   xmlns:layout="sap.ui.layout"
+		   xmlns:m="sap.m"
+		   xmlns:card="sap.f.cards"
+		   height="100%"
+			xmlns:f="sap.ui.layout.form"
+			xmlns:l="sap.ui.layout">
 
-    <semantic:SemanticPage
-        id="page"
-        headerPinnable="false"
-        toggleHeaderOnTitleClick="false">
+     <m:Page showHeader="false">   
+    	<!-- <m:subHeader>
+			<Bar>
+			<contentLeft>
+			  <m:Link text="Projects" emphasized="true" press="goSearchScreen"/>
+                <m:Text text=">" width="2px" class="sapUiTinyMarginEnd"/>
+                <m:Link text="High Level Summary" emphasized="true" enabled="true"
+				 press = "onPressHighLevelSummary"/>
+				<m:Text text=">" width="2px" class="sapUiTinyMarginEnd"/>
+				<m:Link text="Security Top X" emphasized="true" enabled="false"/>
+			</contentLeft>
+			<contentMiddle>
+			<Text text = "Security Top X"/>
+			</contentMiddle>
+			</Bar>
+		</m:subHeader>    -->
+	<!-- <uxap:ObjectPageLayout id="ObjectPageLayout"
+		 showTitleInHeaderContent="false" 
+              alwaysShowContentHeader="true" 
+              headerContentPinnable="true" 
+              enableLazyLoading="false" 
+              showFooter="true">
+		<uxap:headerTitle>
+			<uxap:ObjectPageDynamicHeaderTitle>
+				<uxap:expandedHeading>
+					<m:Title text="{appModel>/project}" wrapping="true"/>
+				</uxap:expandedHeading>
+				<uxap:snappedHeading>
+					<m:FlexBox fitContainer="true" alignItems="Center">
+                        <m:Avatar src="{path: 'staticDataModel>/tempIcon',formatter: '.formatter.iconFilePath'}" class="sapUiTinyMarginEnd"/>
+        				<m:Title text="{i18n>detail.cashcollection.title}" wrapping="true" />
+					</m:FlexBox>
+				</uxap:snappedHeading>
+				<uxap:expandedContent>
+				</uxap:expandedContent>
+				<uxap:actions>
+				</uxap:actions>
+			</uxap:ObjectPageDynamicHeaderTitle>
+		</uxap:headerTitle>
+		<uxap:headerContent>
+			<m:FlexBox wrap="Wrap" fitContainer="true" >
+				<layout:VerticalLayout class="sapUiMediumMarginBeginEnd">
+					<m:Label text="Project Manager" design="Bold" />
+					<m:Text text="{projectManager}"/>
+					<m:Text text="{pmId}"/>
+				</layout:VerticalLayout>
 
-        <semantic:titleHeading>
-            <Title
-                text="{i18n>worklistTitle}"
-                level="H2"/>
-        </semantic:titleHeading>
+				<layout:VerticalLayout class="sapUiMediumMarginBeginEnd">
+					<m:Label text="Quality Program Accountable" design="Bold" />
+					<m:Text text="{qualityManager}"/>
+					<m:Text text="{qmId}"/>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<m:Label text="Product Group : {appModel>/id}"/>
+				</layout:VerticalLayout>
+			</m:FlexBox>
+		</uxap:headerContent> -->
+		<uxap:ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
+		<uxap:headerTitle>
+			<uxap:ObjectPageDynamicHeaderTitle>
+				<uxap:heading>
+					<m:Title text="{i18n>appDescription}" wrapping="true"/>
+				</uxap:heading>
 
-        <semantic:content>
-            <Table
-                id="table"
-                width="auto"
-                items="{
-                    path: '/Categories',
-                    sorter: {
-                        path: 'CategoryName',
-                        descending: false
-                    }
-                }"
-                noDataText="{worklistView>/tableNoDataText}"
-                busyIndicatorDelay="{worklistView>/tableBusyDelay}"
-                growing="true"
-                growingScrollToLoad="true"
-                updateFinished=".onUpdateFinished">
+				<uxap:snappedTitleOnMobile>
+					<m:Title text="{i18n>appDescription}"/>
+				</uxap:snappedTitleOnMobile>
+			</uxap:ObjectPageDynamicHeaderTitle>
+		</uxap:headerTitle>
+			<uxap:headerContent>
+			<!-- <m:FlexBox wrap="Wrap" fitContainer="true" >
+				<layout:VerticalLayout class="sapUiMediumMarginBeginEnd">
+					<m:Label text="Options" design="Bold" />
+					<m:Select>
+					<core:Item key = "01" text = "Monthly"/>
+					<core:Item key = "02" text = "Weekly"/>
+					<core:Item key = "03" text = "Daily"/>
+					</m:Select>
+				</layout:VerticalLayout> -->
 
-                <headerToolbar>
-                    <OverflowToolbar>
-                        <Title
-                            id="tableHeader"
-                            text="{worklistView>/worklistTableTitle}"
-                            level="H3"/>
-                        <ToolbarSpacer />
-                        <SearchField
-                            id="searchField"
-                            tooltip="{i18n>worklistSearchTooltip}"
-                            search=".onSearch">
-                            <layoutData>
-                                <OverflowToolbarLayoutData
-                                    maxWidth="200px"
-                                    priority="NeverOverflow"/>
-                            </layoutData>
-                        </SearchField>
-                    </OverflowToolbar>
-                </headerToolbar>
+				<!-- <layout:VerticalLayout class="sapUiMediumMarginBeginEnd">
+					<m:Label text="Quality Program Accountable" design="Bold" />
+					<m:Text text="{qualityManager}"/>
+					<m:Text text="{qmId}"/>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<m:Label text="Product Group : {appModel>/id}"/>
+				</layout:VerticalLayout> -->
+			<!-- </m:FlexBox> -->
+		</uxap:headerContent>
 
-                <columns>
-                    <Column id="nameColumn">
-                        <Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
-                    </Column>
-                    <Column id="unitNumberColumn" hAlign="End">
-                        <Text text="{i18n>tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
-                    </Column>
-                </columns>
+	<!-- <uxap:headerContent>
+		<m:Title text="Finanace Dashboards which contains {i18n>detail.cashcollection.title}" titleStyle="H6"/>
+	</uxap:headerContent> -->
+		<uxap:sections>
+	<!-- <uxap:ObjectPageSection title = "{i18n>detail.cashcollection.title}"  showTitle = "false">
+		<uxap:subSections>
+	<uxap:ObjectPageSubSection showTitle = "true" title = "{i18n>detail.cashcollection.title}">
+		<uxap:blocks> -->
+         <!-- <Panel expandable="true" expanded="true">
+		  <headerToolbar>
+			<Toolbar height="3rem">
+			<Title text="{i18n>detail.cashcollection.title}" level="H4" titleStyle="H4"/>
+			</Toolbar>
+		  </headerToolbar>
+		  <content> -->
+		 <!-- <core:Fragment type="XML"
+			fragmentName="com.sap.byjus.payments.view.fragments.cashCollection" /> -->
+        <!-- </content>
+        </Panel> -->
+		<!-- </uxap:blocks>
+	</uxap:ObjectPageSubSection>
+	</uxap:subSections>
+	</uxap:ObjectPageSection> -->
+	<uxap:ObjectPageSection showTitle = "false" titleUppercase = "false" 
+								 title="Direct Material">
+		<uxap:subSections>
+	<uxap:ObjectPageSubSection  showTitle = "true" titleUppercase = "false" 
+								 title="Direct Material">
+		<uxap:blocks>
+        <core:Fragment type="XML"
+			fragmentName="com.sap.byjus.payments.view.fragments.directMaterials" />
+		</uxap:blocks>
+	</uxap:ObjectPageSubSection>
+	</uxap:subSections>
+	</uxap:ObjectPageSection>
+	<uxap:ObjectPageSection showTitle = "false" titleUppercase = "false" 
+								 title="Taxes">
+		<uxap:subSections>
+	<uxap:ObjectPageSubSection  showTitle = "true" titleUppercase = "false" 
+								 title="Taxes">
+		<uxap:blocks>
+        <core:Fragment type="XML"
+			fragmentName="com.sap.byjus.payments.view.fragments.taxes" />
+		</uxap:blocks>
+	</uxap:ObjectPageSubSection>
+	</uxap:subSections>
+	</uxap:ObjectPageSection>
+		<uxap:ObjectPageSection showTitle = "false" titleUppercase = "false" 
+								 title="Rent">
+		<uxap:subSections>
+	<uxap:ObjectPageSubSection  showTitle = "true" titleUppercase = "false" 
+								 title="Rent">
+		<uxap:blocks>
+        <core:Fragment type="XML"
+			fragmentName="com.sap.byjus.payments.view.fragments.rent" />
+		</uxap:blocks>
+	</uxap:ObjectPageSubSection>
+	</uxap:subSections>
+	</uxap:ObjectPageSection>
 
-                <items>
-                    <ColumnListItem
-                        type="Navigation"
-                        press=".onPress">
-                        <cells>
-                            <ObjectIdentifier
-                                title="{CategoryName}"/>
-                            <ObjectNumber />
-                        </cells>
-                    </ColumnListItem>
-                </items>
-            </Table>
-        </semantic:content>
+	<uxap:ObjectPageSection showTitle = "false" titleUppercase = "false" 
+								 title="Salariess">
+		<uxap:subSections>
+	<uxap:ObjectPageSubSection  showTitle = "true" titleUppercase = "false" 
+								 title="Salariess">
+		<uxap:blocks>
+        <core:Fragment type="XML"
+			fragmentName="com.sap.byjus.payments.view.fragments.salaries" />
+		</uxap:blocks>
+	</uxap:ObjectPageSubSection>
+	</uxap:subSections>
+	</uxap:ObjectPageSection>
 
-        <semantic:sendEmailAction>
-            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
-        </semantic:sendEmailAction>
+		<uxap:ObjectPageSection showTitle = "false" titleUppercase = "false" 
+								 title="Advertisement">
+		<uxap:subSections>
+	<uxap:ObjectPageSubSection  showTitle = "true" titleUppercase = "false" 
+								 title="Advertisement">
+		<uxap:blocks>
+        <core:Fragment type="XML"
+			fragmentName="com.sap.byjus.payments.view.fragments.Advertisement" />
+		</uxap:blocks>
+	</uxap:ObjectPageSubSection>
+	</uxap:subSections>
+	</uxap:ObjectPageSection>
 
-    </semantic:SemanticPage>
+	<uxap:ObjectPageSection>
+		<uxap:subSections>
+	<uxap:ObjectPageSubSection showTitle = "true" title = "Other Advertisement" titleUppercase = "false">
+		<uxap:blocks>
+    
+		 <core:Fragment type="XML"
+			fragmentName="com.sap.byjus.payments.view.fragments.otherAdvertisement" />
+       
+	</uxap:blocks>
+	</uxap:ObjectPageSubSection>
+	</uxap:subSections>
+	</uxap:ObjectPageSection>
+
+	<uxap:ObjectPageSection>
+		<uxap:subSections>
+	<uxap:ObjectPageSubSection showTitle = "true" title = "Transport / Accommodation" titleUppercase = "false">
+		<uxap:blocks>
+    
+		 <core:Fragment type="XML"
+			fragmentName="com.sap.byjus.payments.view.fragments.transportAccommodation" />
+       
+	</uxap:blocks>
+	</uxap:ObjectPageSubSection>
+	</uxap:subSections>
+	</uxap:ObjectPageSection>
+
+	<uxap:ObjectPageSection>
+		<uxap:subSections>
+	<uxap:ObjectPageSubSection showTitle = "true" title = "BTC" titleUppercase = "false">
+		<uxap:blocks>
+    
+		 <core:Fragment type="XML"
+			fragmentName="com.sap.byjus.payments.view.fragments.btc" />
+       
+	</uxap:blocks>
+	</uxap:ObjectPageSubSection>
+	</uxap:subSections>
+	</uxap:ObjectPageSection>
+
+	<uxap:ObjectPageSection>
+		<uxap:subSections>
+	<uxap:ObjectPageSubSection showTitle = "true" title = "Others" titleUppercase = "false">
+		<uxap:blocks>
+    
+		 <core:Fragment type="XML"
+			fragmentName="com.sap.byjus.payments.view.fragments.others" />
+       
+	</uxap:blocks>
+	</uxap:ObjectPageSubSection>
+	</uxap:subSections>
+	</uxap:ObjectPageSection>
+	
+	</uxap:sections>
+	</uxap:ObjectPageLayout>
+		<m:footer>
+			<m:Toolbar>
+				<m:ToolbarSpacer/>
+				<m:Button icon="sap-icon://action" type="Transparent" press="onPress" />
+			</m:Toolbar>
+		</m:footer>
+    </m:Page> 
 
 </mvc:View>
