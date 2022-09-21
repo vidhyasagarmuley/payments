@@ -18,6 +18,7 @@
 			<f:title>
 				<f:DynamicPageTitle>
 					<f:heading>
+                    <Title text = "Payments (Expenditure)"/>
 						<!-- <vm:VariantManagement standardItemText="Cash Collection">
 						</vm:VariantManagement> -->
 					</f:heading>
