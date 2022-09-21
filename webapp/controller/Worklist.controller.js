@@ -37,235 +37,55 @@ sap.ui.define([
                 worklistTableTitle: this.getResourceBundle().getText("worklistTableTitle"),
                 shareSendEmailSubject: this.getResourceBundle().getText("shareSendEmailWorklistSubject"),
                 shareSendEmailMessage: this.getResourceBundle().getText("shareSendEmailWorklistMessage", [location.href]),
-                tableNoDataText: this.getResourceBundle().getText("tableNoDataText")
+                tableNoDataText: this.getResourceBundle().getText("tableNoDataText"),
+                Flag: "001"
             });
             this.setModel(oViewModel, "worklistView");
-            var sJsonPath = jQuery.sap.getModulePath("com.sap.byjus.payments", "/model/testData.json");
+            var sJsonPath = jQuery.sap.getModulePath("com.sap.byjus.byjusdashboard", "/model/testData.json");
             var oStaticDataModel = new JSONModel(sJsonPath);
             this.getView().setModel(oStaticDataModel, "staticDataModel");
             var detailJSONModel = new JSONModel({
-                "cashCollection": [{
-                        "Direct Materials": 23733.00,
-                        "Taxes": 12322.00,
-                        "Rent": 28674.00,
-                        "Salariess": 303023.00,
-                        "Advertisement": 494493.00,
-                        "OtherAdvertisement": 494493.00,
-                        "Date": "01/01/2022"
-                    },
-                    {
-                        "Direct Materials": 23733.00,
-                        "Taxes": 23733.00,
-                        "Rent": 23733.00,
-                        "Salariess": 23733.00,
-                        "Advertisement": 23733.00,
-                        "OtherAdvertisement": 494493.00,
-                        "Date": "01/02/2022"
-                    },
-                    {
-                        "Direct Materials": 58463.00,
-                        "Taxes": 33939.00,
-                        "Rent": 48293.00,
-                        "Salariess": 237323.00,
-                        "Advertisement": 36362.00,
-                        "OtherAdvertisement": 494493.00,
-                        "Date": "01/03/2022"
-                    },
-                ],
-                "directMaterials": [{
-                        "Direct Materials": 23733.00,
-                        // "Taxes": 12322.00,
-                        // "Rent": 28674.00,
-                        // "Salariess": 303023.00,
-                        // "Advertisement": 494493.00,
-                        "Date": "01/01/2022"
-                    },
-                    {
-                        "Direct Materials": 23733.00,
-                        // "Taxes": 23733.00,
-                        // "Rent": 23733.00,
-                        // "Salariess": 23733.00,
-                        // "Advertisement": 23733.00,
-                        "Date": "01/02/2022"
-                    },
-                    {
-                        "Direct Materials": 58463.00,
-                        // "Taxes": 33939.00,
-                        // "Rent": 48293.00,
-                        // "Salariess": 237323.00,
-                        // "Advertisement": 36362.00,
-                        "Date": "01/03/2022"
-                    },
-                ],
-                "taxes": [{
-                        // "Direct Materials": 23733.00,
-                        "Taxes": 12322.00,
-                        // "Rent": 28674.00,
-                        // "Salariess": 303023.00,
-                        // "Advertisement": 494493.00,
-                        "Date": "01/01/2022"
-                    },
-                    {
-                        // "Direct Materials": 23733.00,
-                        "Taxes": 23733.00,
-                        // "Rent": 23733.00,
-                        // "Salariess": 23733.00,
-                        // "Advertisement": 23733.00,
-                        "Date": "01/02/2022"
-                    },
-                    {
-                        // "Direct Materials": 58463.00,
-                        "Taxes": 33939.00,
-                        // "Rent": 48293.00,
-                        // "Salariess": 237323.00,
-                        // "Advertisement": 36362.00,
-                        "Date": "01/03/2022"
-                    },
-                ],
-                "rent": [{
-                        // "Direct Materials": 23733.00,
-                        // "Taxes": 12322.00,
-                        "Rent": 28674.00,
-                        // "Salariess": 303023.00,
-                        // "Advertisement": 494493.00,
-                        "Date": "01/01/2022"
-                    },
-                    {
-                        // "Direct Materials": 23733.00,
-                        // "Taxes": 23733.00,
-                        "Rent": 23733.00,
-                        // "Salariess": 23733.00,
-                        // "Advertisement": 23733.00,
-                        "Date": "01/02/2022"
-                    },
-                    {
-                        // "Direct Materials": 58463.00,
-                        // "Taxes": 33939.00,
-                        "Rent": 48293.00,
-                        // "Salariess": 237323.00,
-                        // "Advertisement": 36362.00,
-                        "Date": "01/03/2022"
-                    },
-                ],
-                "salaries": [{
-                        // "Direct Materials": 23733.00,
-                        // "Taxes": 12322.00,
-                        // "Rent": 28674.00,
-                        "Salariess": 303023.00,
-                        // "Advertisement": 494493.00,
-                        "Date": "01/01/2022"
-                    },
-                    {
-                        // "Direct Materials": 23733.00,
-                        // "Taxes": 23733.00,
-                        // "Rent": 23733.00,
-                        "Salariess": 23733.00,
-                        // "Advertisement": 23733.00,
-                        "Date": "01/02/2022"
-                    },
-                    {
-                        // "Direct Materials": 58463.00,
-                        // "Taxes": 33939.00,
-                        // "Rent": 48293.00,
-                        "Salariess": 237323.00,
-                        // "Advertisement": 36362.00,
-                        "Date": "01/03/2022"
-                    },
-                ],
-                "Advertisement": [{
-                        // "Direct Materials": 23733.00,
-                        // "Taxes": 12322.00,
-                        // "Rent": 28674.00,
-                        // "Salariess": 303023.00,
-                        "Advertisement": 44493.00,
-                        "Date": "01/01/2022"
-                    },
-                    {
-                        // "Direct Materials": 23733.00,
-                        // "Taxes": 23733.00,
-                        // "Rent": 23733.00,
-                        // "Salariess": 23733.00,
-                        "Advertisement": 23933.00,
-                        "Date": "01/02/2022"
-                    },
-                    {
-                        // "Direct Materials": 58463.00,
-                        // "Taxes": 33939.00,
-                        // "Rent": 48293.00,
-                        // "Salariess": 237323.00,
-                        "Advertisement": 36362.00,
-                        "Date": "01/03/2022"
-                    },
-                ],
-                "OtherAdvertisement": [{
-                        // "Direct Materials": 23733.00,
-                        // "Taxes": 12322.00,
-                        // "Rent": 28674.00,
-                        // "Salariess": 303023.00,
-                        "Other Advertisement": 44493.00,
-                        "Date": "01/01/2022"
-                    },
-                    {
-                        // "Direct Materials": 23733.00,
-                        // "Taxes": 23733.00,
-                        // "Rent": 23733.00,
-                        // "Salariess": 23733.00,
-                        "Other Advertisement": 23933.00,
-                        "Date": "01/02/2022"
-                    },
-                    {
-                        // "Direct Materials": 58463.00,
-                        // "Taxes": 33939.00,
-                        // "Rent": 48293.00,
-                        // "Salariess": 237323.00,
-                        "Other Advertisement": 36362.00,
-                        "Date": "01/03/2022"
-                    },
-                ],
-                "transportAccommodation": [{
-                        "Transport Accommodation": 44493.00,
-                        "Date": "01/01/2022"
-                    },
-                    {
-                        "Transport Accommodation": 23933.00,
-                        "Date": "01/02/2022"
-                    },
-                    {
-                        "Transport Accommodation": 36362.00,
-                        "Date": "01/03/2022"
-                    },
-                ],
-                "btc": [{
-                        "BTC": 44493.00,
-                        "Date": "01/01/2022"
-                    },
-                    {
-                        "BTC": 23933.00,
-                        "Date": "01/02/2022"
-                    },
-                    {
-                        "BTC": 36362.00,
-                        "Date": "01/03/2022"
-                    },
-                ],
-                "others": [{
-                        "Others": 44493.00,
-                        "Date": "01/01/2022"
-                    },
-                    {
-                        "Others": 23933.00,
-                        "Date": "01/02/2022"
-                    },
-                    {
-                        "Others": 36362.00,
-                        "Date": "01/03/2022"
-                    },
+                "cashCollection": [
                 ]
             });
             this.getView().setModel(detailJSONModel, "detailJSONModel");
             this._handleSetVizFrameData(detailJSONModel.getProperty("/"));
-
+            this.getRouter().getRoute("worklist").attachPatternMatched(this._onPatternMatch, this);
         },
+        _onPatternMatch: function (oEvent) {
+            // this.getModel().metadataLoaded().then(function() {
+            //     this.byId("idCashCollectionTable").rebindTable();
+            //  }.bind(this));
+           let oParams = {
+               entity: "/zcash_collection",
+               filter: []
+           }
+          this.bindTableItems(oParams);
+        },
+        bindTableItems : function (oParams) {
+            let sTable = this.byId("idCashCollectionTable");
+           if (!this.oTableItem) {
+                this.oTableItem = this._createFragment(this.createId("idFragmentCashCollectionItem"),
+                "com.sap.byjus.byjusdashboard.view.fragments.cashCollectionTableItem");
+           }
+            sTable.bindItems({
+				path: oParams.entity,
+                filters: oParams.filters,
+				template: this.oTableItem.clone(),
+				templateShareable: false
+			});
+			sTable.getBinding("items").refresh(true);
+        },
+       /* * Create Fragment
+        * @param {string} sFragmentID Fragment ID
+        * @param {string} sFragmentName Fragment name
+        * @returns {*} Fragment
+        * @private
+        */
+       _createFragment: function (sFragmentID, sFragmentName) {
+           var oFragment = sap.ui.xmlfragment(sFragmentID, sFragmentName, this);
+           return oFragment;
+       },
 
         /* =========================================================== */
         /* event handlers                                              */
@@ -317,21 +137,54 @@ sap.ui.define([
 
 
         onSearch: function (oEvent) {
-            if (oEvent.getParameters().refreshButtonPressed) {
-                // Search field's 'refresh' button has been pressed.
-                // This is visible if you select any main list item.
-                // In this case no new search is triggered, we only
-                // refresh the list binding.
-                this.onRefresh();
-            } else {
-                var aTableSearchState = [];
-                var sQuery = oEvent.getParameter("query");
-
-                if (sQuery && sQuery.length > 0) {
-                    aTableSearchState = [new Filter("CategoryName", FilterOperator.Contains, sQuery)];
+           let selectionSet = oEvent.getParameters().selectionSet;
+           let sControl,sValue, filters = [], sPath;
+           if (selectionSet.length > 0) {
+            selectionSet.forEach(function(item) {
+                sControl = item.getMetadata()._sClassName;
+                sValue = "";
+                if (sControl === "sap.m.DatePicker" || sControl === "Input") {
+                    if (sControl === "sap.m.DatePicker") {
+                        sValue = item.getDateValue();
+                    } else {
+                        sValue = item.getValue();
+                    }
+                } else if (sControl === "sap.m.ComboBox" || sControl === "sap.m.Select") {
+                    sValue = item.getSelectedKey();
+                    sPath = item.getCustomData()[0].getValue();
+                    if (sPath === "Source") {
+                        this.getModel("worklistView").setProperty("/Flag", sValue);
+                    }
                 }
-                this._applySearch(aTableSearchState);
+                if (sValue) {
+                    sPath = item.getCustomData()[0].getValue();
+                    if (sPath === "fromDate" || sPath === "toDate") {
+                        var finalValue =  sValue.toISOString().split('T')[0] + 'T00:00:00';;
+                            // sValue = 'datetime' + "'" + finalValue  + "'";
+                        if (sPath === "fromDate") {
+                            filters.push(new Filter('h_budat', "GE", finalValue));
+                        } else if (sPath === "toDate") {
+                            filters.push(new Filter('h_budat', "LE", finalValue));
+                        }
+                    } else if (sPath === "partner") {
+                          filters.push(new Filter(sPath, "EQ", sValue));
+                    }
+                }
+            }.bind(this));
+            var aFilters = new Filter({
+				filters: filters,
+				and: true
+			});
+            // var oBinding = this.byId("idCashCollectionTable").getBinding("items");
+			// oBinding.filter(aFilters);
+            let sFlag = this.getModel("worklistView").getProperty("/Flag");
+            let oParams = {
+                entity:sFlag === '001' ?  "/zcash_collection" :  "/zcash_collection_monthly" ,
+                filters: [aFilters] 
             }
+            this.bindTableItems(oParams);
+            this.readBackendData(oParams);
+           }
 
         },
 
@@ -375,12 +228,12 @@ sap.ui.define([
             }
         },
         _handleSetVizFrameData: function (data) {
-            var sProperties = this.getView().getModel("detailJSONModel").getProperty("/");
-            var keys = Object.keys(sProperties);
-            keys.forEach((key) => {
+            // var sProperties = this.getView().getModel("detailJSONModel").getProperty("/");
+            // var keys = Object.keys(sProperties);
+            // keys.forEach((key) => {
                 //    this._handlePrepareData(key ,data);
-                this._handleVizFrames(key);
-            });
+                this._handleVizFrames("vizframe");
+            // });
         },
         _handlePrepareData: function (key, data) {
             var keyArray = [];
@@ -483,32 +336,32 @@ sap.ui.define([
             }
         },
         getDashboardDescription: function (oControll) {
-            let description = '';
-            if (oControll.getId().indexOf("cashCollection") >= 0) {
-                description = "Cash collection from different sources";
-            } else if (oControll.getId().indexOf("directMaterials") >= 0) {
-                description = "Direct Materials";
-            } else if (oControll.getId().indexOf("taxes") >= 0) {
-                description = "Taxes";
-            } else if (oControll.getId().indexOf("directMaterials") >= 0) {
-                description = "Direct Materials";
-            } else if (oControll.getId().indexOf("rent") >= 0) {
-                description = "Rent";
-            } else if (oControll.getId().indexOf("salaries") >= 0) {
-                description = "Salariess";
-            } else if (oControll.getId().indexOf("OtherAdvertisement") >= 0) {
-                description = "Other Advertisement";
-            } else if (oControll.getId().indexOf("Advertisement") >= 0) {
-                description = "Advertisement";
-            } else if (oControll.getId().indexOf("transportAccommodation") >= 0) {
-                description = "Transport / Accommodation";
-            } else if (oControll.getId().indexOf("btc") >= 0) {
-                description = "BTC";
-            } else if (oControll.getId().indexOf("others") >= 0) {
-                description = "Others";
+            oControll = this.byId("idComboSources").getSelectedKey();
+            if (oControll) {
+                return this.byId("idComboSources").getSelectedItem().getText();
+            } else {
+                return "";
             }
-            return description;
         },
+        // getDashboardDescription: function (oControll) {
+        //     let description = '';
+        //     if (oControll.getId().indexOf("cashCollection") >= 0) {
+        //         description = "Cash collection from different sources";
+        //     } else if (oControll.getId().indexOf("loanPartners") >= 0) {
+        //         description = "Loan Partners";
+        //     } else if (oControll.getId().indexOf("retailDirectToBank") >= 0) {
+        //         description = "Retail Direct To Bank";
+        //     } else if (oControll.getId().indexOf("loanPartners") >= 0) {
+        //         description = "Loan Partners";
+        //     } else if (oControll.getId().indexOf("payuAndRozaPay") >= 0) {
+        //         description = "PayU and Razorpay";
+        //     } else if (oControll.getId().indexOf("export") >= 0) {
+        //         description = "Exports";
+        //     } else if (oControll.getId().indexOf("nachEEBytes") >= 0) {
+        //         description = "NACH (EE Bytes)";
+        //     }
+        //     return description;
+        // },
         _handleChangeFilterType: function (oEvent) {
             let selectedKey = oEvent.getSource().getSelectedKey();
             let sKey = oEvent.getSource().getCustomData()[0].getValue();
@@ -518,32 +371,20 @@ sap.ui.define([
         _handleGetSampleData: function (selectedKey, sKey) {
             let data, sField;
             switch (sKey) {
-                case "directMaterials":
-                    sField = "Direct Materials";
+                case "loanPartners":
+                    sField = "Loan Partners";
                     break;
-                case "salaries":
-                    sField = "Salariess";
+                case "export":
+                    sField = "Exports";
                     break;
-                case "Advertisement":
-                    sField = "Advertisement";
+                case "nachEEBytes":
+                    sField = "NACH (EE Bytes)";
                     break;
-                case "OtherAdvertisement":
-                    sField = "Other Advertisement";
+                case "payuAndRozaPay":
+                    sField = "PayU and Razorpay";
                     break;
-                case "rent":
-                    sField = "Rent";
-                    break;
-                case "taxes":
-                    sField = "Taxes";
-                    break;
-                case "transportAccommodation":
-                    sField = "Transport Accommodation";
-                    break;
-                case "btc":
-                    sField = "BTC";
-                    break;
-                case "others":
-                    sField = "Others";
+                case "retailDirectToBank":
+                    sField = "Retail Direct to Bank";
                     break;
             }
             if (selectedKey === "01") {
@@ -586,6 +427,51 @@ sap.ui.define([
             let sProperty = "/" + sKey;
             this.getModel("detailJSONModel").setProperty(sProperty, data);
 
+        },
+        // onBeforeRebindPayUTable: function (oEvent) {
+        //     var oUpdate = new SmartTableBindingUpdate(oEvent.getParameter("bindingParams"));
+        //     oUpdate.addFilter("partner", FilterOperator.EQ, 'G');
+        //     oUpdate.endFilterAnd();
+        // },
+        onSelectionChangeCombobox: function (oEvent) {
+
+        },
+        onSwitchChange: function (oEvent) {
+            let sSelectedkey = oEvent.getSource().getSelectedKey();
+            if (this.byId("idComboSources").getSelectedKey()) {
+            if (sSelectedkey === "2") {
+                this.byId("cashCollection").setVisible(false);
+                this.byId("lineGraph").setVisible(true);
+                // this.byId("idFilterBar").fireSearch();
+                // this._handleOpenVizFrame();
+            } else if (sSelectedkey === "1") {
+                this.byId("cashCollection").setVisible(true);
+                this.byId("lineGraph").setVisible(false);
+            }
+        } else {
+            oEvent.getSource().setSelectedKey("1");
+            sap.m.MessageToast.show("Please select the source first");
+        }
+        },
+        // _handleOpenVizFrame: function () {
+        //     let sPromise  = new Promise(function(resolve, reject){
+        //         this.readBackendData(resolve, reject);
+        //     });
+        // },
+        readBackendData: function (oParams) {
+            // let filter = [aFilters];
+            this.getView().setBusy(true);
+            this.getModel().read(oParams.entity, {
+                filters:oParams.filters,
+                success: function (data) {
+                    this.getView().setBusy(false);
+                    this.getView().getModel("detailJSONModel").setProperty("/vizframeData", data.results);
+                }.bind(this), 
+                error: function (oError) {
+                    this.getView().setBusy(false);
+                    console.log(oError)
+                }.bind(this)
+            });
         }
 
     });
