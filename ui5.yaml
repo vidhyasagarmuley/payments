@@ -16,8 +16,10 @@ server:
             - /test-resources
           url: https://ui5.sap.com
         backend:
-          - path: /v2
-            url: https://services.odata.org
+          - path: /sap/opu/odata/
+            url: http://Byjusdev:44330
+            client: '110'
+            destination: byjusfioridev
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:

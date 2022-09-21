@@ -41,7 +41,7 @@ sap.ui.define([
                 Flag: "001"
             });
             this.setModel(oViewModel, "worklistView");
-            var sJsonPath = jQuery.sap.getModulePath("com.sap.byjus.byjusdashboard", "/model/testData.json");
+            var sJsonPath = jQuery.sap.getModulePath("com.sap.byjus.payments", "/model/testData.json");
             var oStaticDataModel = new JSONModel(sJsonPath);
             this.getView().setModel(oStaticDataModel, "staticDataModel");
             var detailJSONModel = new JSONModel({
@@ -66,7 +66,7 @@ sap.ui.define([
             let sTable = this.byId("idCashCollectionTable");
            if (!this.oTableItem) {
                 this.oTableItem = this._createFragment(this.createId("idFragmentCashCollectionItem"),
-                "com.sap.byjus.byjusdashboard.view.fragments.cashCollectionTableItem");
+                "com.sap.byjus.payments.view.fragments.cashCollectionTableItem");
            }
             sTable.bindItems({
 				path: oParams.entity,

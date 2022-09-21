@@ -13,26 +13,34 @@
     xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 <Table id = "idCashCollectionTable">
             <columns>
-             <Column  hAlign = "Center">
+             <Column>
                     <customData>
                     <!-- <core:CustomData key="p13nData" 
                         value='\{"columnKey": "Date","columnIndex":"1", "leadingProperty": "Date"}' /> -->
                 </customData>
-                    <Text text="Partner" />
+                    <Text text="{i18n>category}" />
                 </Column>
                 <Column>
                     <customData>
                     <!-- <core:CustomData key="p13nData" 
                         value='\{"columnKey": "Date","columnIndex":"1", "leadingProperty": "Date"}' /> -->
                 </customData>
-                    <Text text="Date" />
+                    <Text text="{i18n>date}" />
                 </Column>
                 <Column minScreenWidth="Tablet" demandPopin="true" hAlign = "Right">
                     <customData>
                     <!-- <core:CustomData key="p13nData" 
                         value='\{"columnKey": "Amount","columnIndex":"2", "leadingProperty": "Amount"}' /> -->
                 </customData>
-                    <Text text="Amount" />
+                    <Text text="{i18n>outstanding_payables}" />
+                </Column>
+
+                   <Column minScreenWidth="Tablet" demandPopin="true" hAlign = "Right">
+                    <customData>
+                    <!-- <core:CustomData key="p13nData" 
+                        value='\{"columnKey": "Amount","columnIndex":"2", "leadingProperty": "Amount"}' /> -->
+                </customData>
+                    <Text text="{i18n>plan_nextmonth}" />
                 </Column>
             </columns>
             <!-- <ColumnListItem vAlign="Middle">

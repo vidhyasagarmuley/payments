@@ -16,13 +16,22 @@
             "toolsId": "bf13c641-97c4-4c7c-a9b8-8b095469a278"
         },
         "dataSources": {
-            "mainService": {
-                "uri": "/v2/northwind/northwind.svc/",
+            "ZGW_CASH_COLLECTION_SRV_Annotation": {
+                "uri": "/destinations/byjusfioridev/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZGW_CASH_COLLECTION_ANNO_MDL',Version='0001')/$value/",
+                "type": "ODataAnnotation",
+                "settings": {
+                    "localUri": "localService/ZGW_CASH_COLLECTION_SRV_Annotation.xml"
+                }
+            },
+            "ZGW_CASH_COLLECTION_SRV": {
+                "uri": "/sap/opu/odata/sap/ZGW_CASH_COLLECTION_SRV",
                 "type": "OData",
                 "settings": {
-                    "annotations": [],
-                    "localUri": "localService/metadata.xml",
-                    "odataVersion": "2.0"
+                    "odataVersion": "2.0",
+                    "annotations": [
+                        "ZGW_CASH_COLLECTION_SRV_Annotation"
+                    ],
+                    "localUri": "localService/metadata.xml"
                 }
             }
         },
@@ -85,9 +94,8 @@
                 }
             },
             "": {
-                "dataSource": "mainService",
                 "preload": true,
-                "settings": {}
+                "dataSource": "ZGW_CASH_COLLECTION_SRV"
             }
         },
         "resources": {

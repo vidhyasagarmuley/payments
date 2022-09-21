@@ -26,6 +26,7 @@
                     <Text text="{path: 'h_budat', formatter: '.formatter.formatMonthYear'}" visible = "{= ${worklistView>/Flag} === '001' ? false: true}"/>
                     </HBox>
                     <Text text="{path: 'amt', formatter: '.formatter.formatNumberIntoCurrency'}" />
+                    <Text text="{path: 'amt', formatter: '.formatter.formatNumberIntoCurrency'}" />
                 </cells>
             </ColumnListItem>
        
