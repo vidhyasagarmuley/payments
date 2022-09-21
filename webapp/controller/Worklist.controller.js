@@ -232,7 +232,7 @@ sap.ui.define([
             // var keys = Object.keys(sProperties);
             // keys.forEach((key) => {
                 //    this._handlePrepareData(key ,data);
-                this._handleVizFrames("vizframe");
+                this._handleVizFrames("paymentVizframe");
             // });
         },
         _handlePrepareData: function (key, data) {
@@ -465,7 +465,7 @@ sap.ui.define([
                 filters:oParams.filters,
                 success: function (data) {
                     this.getView().setBusy(false);
-                    this.getView().getModel("detailJSONModel").setProperty("/vizframeData", data.results);
+                    this.getView().getModel("detailJSONModel").setProperty("/paymentVizframeData", data.results);
                 }.bind(this), 
                 error: function (oError) {
                     this.getView().setBusy(false);

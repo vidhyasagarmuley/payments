@@ -10,15 +10,15 @@
     xmlns:l="sap.ui.layout"
     xmlns:layout="sap.ui.layout"
     xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-    <layout:FixFlex id='vizframechartFixFlex' minFlexSize="250">
+    <layout:FixFlex id='paymentVizframechartFixFlex' minFlexSize="250">
           <layout:fixContent> 
           </layout:fixContent>
            <layout:flexContent>
-            <viz:Popover id="vizframePopOver"></viz:Popover>
-            <viz:VizFrame id="vizframe" uiConfig="{applicationSet:'fiori'}"
+            <viz:Popover id="paymentVizframePopOver"></viz:Popover>
+            <viz:VizFrame id="paymentVizframe" uiConfig="{applicationSet:'fiori'}"
              vizType='line'>
                 <viz:dataset>
-                    <viz.data:FlattenedDataset data="{detailJSONModel>/vizframeData}">
+                    <viz.data:FlattenedDataset data="{detailJSONModel>/paymentVizframeData}">
                         <viz.data:dimensions>
                             <viz.data:DimensionDefinition name="Date"
                                 value="{
