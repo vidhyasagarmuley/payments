@@ -14,19 +14,19 @@
 
             <ColumnListItem vAlign="Middle">
                 <cells>
-                <Text text = "{path:'partner',formatter: '.formatter.formatPartners'}"/>
+                <Text text = "{path:'nature',formatter: '.formatter.formatNatures'}"/>
                 <HBox>
                 <Text visible = "{= ${worklistView>/Flag} === '001' ? true: false}" text="{
-                    path: 'h_budat',
+                    path: 'budat',
                     type: 'sap.ui.model.type.Date',
                     formatOptions: {
                         pattern: 'dd-MM-yyyy' 
                         }  
                     }" />
-                    <Text text="{path: 'h_budat', formatter: '.formatter.formatMonthYear'}" visible = "{= ${worklistView>/Flag} === '001' ? false: true}"/>
+                    <Text text="{path: 'budat', formatter: '.formatter.formatMonthYear'}" visible = "{= ${worklistView>/Flag} === '001' ? false: true}"/>
                     </HBox>
-                    <Text text="{path: 'amt', formatter: '.formatter.formatNumberIntoCurrency'}" />
-                    <Text text="{path: 'amt', formatter: '.formatter.formatNumberIntoCurrency'}" />
+                    <Text text="{path: 'payment', formatter: '.formatter.formatNumberIntoCurrency'}" />
+                    <Text text="{path: 'expenditure', formatter: '.formatter.formatNumberIntoCurrency'}" />
                 </cells>
             </ColumnListItem>
        

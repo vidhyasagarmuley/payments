@@ -22,7 +22,7 @@
                         <viz.data:dimensions>
                             <viz.data:DimensionDefinition name="Date"
                                 value="{
-                                path: 'detailJSONModel>h_budat',
+                                path: 'detailJSONModel>budat',
                                 type: 'sap.ui.model.type.Date',
                                 formatOptions: {
                                     pattern: 'dd MMMM yyyy' 
@@ -31,7 +31,7 @@
                         </viz.data:dimensions>
                           <viz.data:measures>
                             <viz.data:MeasureDefinition name="Amount"
-                                value="{detailJSONModel>amt}" />
+                                value="{detailJSONModel>payment}" />
                         </viz.data:measures>
                     </viz.data:FlattenedDataset>
                 </viz:dataset>

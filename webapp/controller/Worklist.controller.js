@@ -45,7 +45,7 @@ sap.ui.define([
             var oStaticDataModel = new JSONModel(sJsonPath);
             this.getView().setModel(oStaticDataModel, "staticDataModel");
             var detailJSONModel = new JSONModel({
-                "cashCollection": [
+                "payments": [
                 ]
             });
             this.getView().setModel(detailJSONModel, "detailJSONModel");
@@ -54,19 +54,19 @@ sap.ui.define([
         },
         _onPatternMatch: function (oEvent) {
             // this.getModel().metadataLoaded().then(function() {
-            //     this.byId("idCashCollectionTable").rebindTable();
+            //     this.byId("idpaymentsTable").rebindTable();
             //  }.bind(this));
            let oParams = {
-               entity: "/zcash_collection",
+               entity: "/ZPayments",
                filter: []
            }
           this.bindTableItems(oParams);
         },
         bindTableItems : function (oParams) {
-            let sTable = this.byId("idCashCollectionTable");
+            let sTable = this.byId("idpaymentsTable");
            if (!this.oTableItem) {
-                this.oTableItem = this._createFragment(this.createId("idFragmentCashCollectionItem"),
-                "com.sap.byjus.payments.view.fragments.cashCollectionTableItem");
+                this.oTableItem = this._createFragment(this.createId("idFragmentpaymentsItem"),
+                "com.sap.byjus.payments.view.fragments.paymentsTableItem");
            }
             sTable.bindItems({
 				path: oParams.entity,
@@ -162,11 +162,11 @@ sap.ui.define([
                         var finalValue =  sValue.toISOString().split('T')[0] + 'T00:00:00';;
                             // sValue = 'datetime' + "'" + finalValue  + "'";
                         if (sPath === "fromDate") {
-                            filters.push(new Filter('h_budat', "GE", finalValue));
+                            filters.push(new Filter('budat', "GE", finalValue));
                         } else if (sPath === "toDate") {
-                            filters.push(new Filter('h_budat', "LE", finalValue));
+                            filters.push(new Filter('budat', "LE", finalValue));
                         }
-                    } else if (sPath === "partner") {
+                    } else if (sPath === "nature") {
                           filters.push(new Filter(sPath, "EQ", sValue));
                     }
                 }
@@ -175,11 +175,11 @@ sap.ui.define([
 				filters: filters,
 				and: true
 			});
-            // var oBinding = this.byId("idCashCollectionTable").getBinding("items");
+            // var oBinding = this.byId("idpaymentsTable").getBinding("items");
 			// oBinding.filter(aFilters);
             let sFlag = this.getModel("worklistView").getProperty("/Flag");
             let oParams = {
-                entity:sFlag === '001' ?  "/zcash_collection" :  "/zcash_collection_monthly" ,
+                entity:sFlag === '001' ?  "/ZPayments" :  "/ZPayments_monthly" ,
                 filters: [aFilters] 
             }
             this.bindTableItems(oParams);
@@ -345,14 +345,14 @@ sap.ui.define([
         },
         // getDashboardDescription: function (oControll) {
         //     let description = '';
-        //     if (oControll.getId().indexOf("cashCollection") >= 0) {
+        //     if (oControll.getId().indexOf("payments") >= 0) {
         //         description = "Cash collection from different sources";
-        //     } else if (oControll.getId().indexOf("loanPartners") >= 0) {
-        //         description = "Loan Partners";
+        //     } else if (oControll.getId().indexOf("loannatures") >= 0) {
+        //         description = "Loan natures";
         //     } else if (oControll.getId().indexOf("retailDirectToBank") >= 0) {
         //         description = "Retail Direct To Bank";
-        //     } else if (oControll.getId().indexOf("loanPartners") >= 0) {
-        //         description = "Loan Partners";
+        //     } else if (oControll.getId().indexOf("loannatures") >= 0) {
+        //         description = "Loan natures";
         //     } else if (oControll.getId().indexOf("payuAndRozaPay") >= 0) {
         //         description = "PayU and Razorpay";
         //     } else if (oControll.getId().indexOf("export") >= 0) {
@@ -371,8 +371,8 @@ sap.ui.define([
         _handleGetSampleData: function (selectedKey, sKey) {
             let data, sField;
             switch (sKey) {
-                case "loanPartners":
-                    sField = "Loan Partners";
+                case "loannatures":
+                    sField = "Loan natures";
                     break;
                 case "export":
                     sField = "Exports";
@@ -430,7 +430,7 @@ sap.ui.define([
         },
         // onBeforeRebindPayUTable: function (oEvent) {
         //     var oUpdate = new SmartTableBindingUpdate(oEvent.getParameter("bindingParams"));
-        //     oUpdate.addFilter("partner", FilterOperator.EQ, 'G');
+        //     oUpdate.addFilter("nature", FilterOperator.EQ, 'G');
         //     oUpdate.endFilterAnd();
         // },
         onSelectionChangeCombobox: function (oEvent) {
@@ -440,12 +440,12 @@ sap.ui.define([
             let sSelectedkey = oEvent.getSource().getSelectedKey();
             if (this.byId("idComboSources").getSelectedKey()) {
             if (sSelectedkey === "2") {
-                this.byId("cashCollection").setVisible(false);
+                this.byId("payments").setVisible(false);
                 this.byId("lineGraph").setVisible(true);
                 // this.byId("idFilterBar").fireSearch();
                 // this._handleOpenVizFrame();
             } else if (sSelectedkey === "1") {
-                this.byId("cashCollection").setVisible(true);
+                this.byId("payments").setVisible(true);
                 this.byId("lineGraph").setVisible(false);
             }
         } else {

@@ -36,12 +36,12 @@
 				</fb:FilterGroupItem>
                 <fb:FilterGroupItem groupName="__$INTERNAL$" name="D" label="Sources" labelTooltip="Tooltip Example" mandatory="true" partOfCurrentVariant="true" visibleInFilterBar="true">
 					<fb:control>
-						<ComboBox id = "idComboSources" type="Text" change ="onSelectionChangeCombobox" app:key = "partner">
+						<ComboBox id = "idComboSources" type="Text" change ="onSelectionChangeCombobox" app:key = "nature">
 							<items>
 								<core:Item key="1" text="Direct Material"/>
 								<core:Item key="2" text="Taxes"/>
                                 <core:Item key="3" text="Rent"/>
-                                <core:Item key="4" text="Salaries"/>
+                                <core:Item key="SL" text="Salaries"/>
                                 <core:Item key="5" text="Advertisement"/>
                                 <core:Item key="6" text="Other Investments"/>
                                 <core:Item key="7" text="Transport / Accommodation"/>

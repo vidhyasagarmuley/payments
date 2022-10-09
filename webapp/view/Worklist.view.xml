@@ -43,8 +43,8 @@
 			<!-- DynamicPage Content -->
 			<f:content>
             <VBox>
-            <VBox id = "cashCollection">
-                <core:Fragment  fragmentName="com.sap.byjus.payments.view.fragments.cashCollectionTable" 
+            <VBox id = "payments">
+                <core:Fragment  fragmentName="com.sap.byjus.payments.view.fragments.paymentsTable" 
                             type="XML" />
             </VBox>
             <VBox id = "lineGraph" visible = "false">

@@ -29,27 +29,27 @@
     </edmx:Reference>
     <edmx:DataServices m:DataServiceVersion="2.0">
         <Schema Namespace="ZGW_CASH_COLLECTION_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-            <EntityType Name="zcash_collectionType" sap:label="Cash Collection Report" sap:content-version="1">
+            <EntityType Name="ZPaymentsType" sap:label="Cash Collection Report" sap:content-version="1">
                 <Key>
-                    <PropertyRef Name="partner"/>
-                    <PropertyRef Name="h_budat"/>
+                    <PropertyRef Name="nature"/>
+                    <PropertyRef Name="budat"/>
                 </Key>
-                <Property Name="partner" Type="Edm.String" Nullable="false" MaxLength="1" sap:display-format="UpperCase" sap:label="Partner"/>
-                <Property Name="h_budat" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Posting Date" sap:quickinfo="Posting Date in the Document"/>
-                <Property Name="amt" Type="Edm.Decimal" Precision="24" Scale="3"/>
+                <Property Name="nature" Type="Edm.String" Nullable="false" MaxLength="1" sap:display-format="UpperCase" sap:label="nature"/>
+                <Property Name="budat" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Posting Date" sap:quickinfo="Posting Date in the Document"/>
+                <Property Name="payment" Type="Edm.Decimal" Precision="24" Scale="3"/>
             </EntityType>
-            <EntityType Name="zcash_collection_monthlyType" sap:label="Monthly Cash Collection" sap:content-version="1">
+            <EntityType Name="ZPayments_monthlyType" sap:label="Monthly Cash Collection" sap:content-version="1">
                 <Key>
-                    <PropertyRef Name="partner"/>
-                    <PropertyRef Name="h_budat"/>
+                    <PropertyRef Name="nature"/>
+                    <PropertyRef Name="budat"/>
                 </Key>
-                <Property Name="partner" Type="Edm.String" Nullable="false" MaxLength="1" sap:display-format="UpperCase" sap:label="Partner"/>
-                <Property Name="h_budat" Type="Edm.String" Nullable="false" MaxLength="6"/>
-                <Property Name="amt" Type="Edm.Decimal" Precision="24" Scale="3"/>
+                <Property Name="nature" Type="Edm.String" Nullable="false" MaxLength="1" sap:display-format="UpperCase" sap:label="nature"/>
+                <Property Name="budat" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="payment" Type="Edm.Decimal" Precision="24" Scale="3"/>
             </EntityType>
             <EntityContainer Name="ZGW_CASH_COLLECTION_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
-                <EntitySet Name="zcash_collection" EntityType="ZGW_CASH_COLLECTION_SRV.zcash_collectionType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
-                <EntitySet Name="zcash_collection_monthly" EntityType="ZGW_CASH_COLLECTION_SRV.zcash_collection_monthlyType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZPayments" EntityType="ZGW_CASH_COLLECTION_SRV.ZPaymentsType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZPayments_monthly" EntityType="ZGW_CASH_COLLECTION_SRV.ZPayments_monthlyType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
             </EntityContainer>
             <Annotations Target="ZGW_CASH_COLLECTION_SRV.ZGW_CASH_COLLECTION_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
