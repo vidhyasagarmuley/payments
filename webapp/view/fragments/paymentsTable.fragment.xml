@@ -27,20 +27,33 @@
                 </customData>
                     <Text text="{i18n>date}" />
                 </Column>
-                <Column minScreenWidth="Tablet" demandPopin="true" hAlign = "Right">
-                    <customData>
-                    <!-- <core:CustomData key="p13nData" 
-                        value='\{"columnKey": "Amount","columnIndex":"2", "leadingProperty": "Amount"}' /> -->
-                </customData>
-                    <Text text="{i18n>outstanding_payables}" />
-                </Column>
-
                    <Column minScreenWidth="Tablet" demandPopin="true" hAlign = "Right">
                     <customData>
                     <!-- <core:CustomData key="p13nData" 
                         value='\{"columnKey": "Amount","columnIndex":"2", "leadingProperty": "Amount"}' /> -->
                 </customData>
-                    <Text text="{i18n>plan_nextmonth}" />
+                    <Text text="{i18n>expenditure}" />
+                </Column>
+                <Column minScreenWidth="Tablet" demandPopin="true" hAlign = "Right">
+                    <customData>
+                    <!-- <core:CustomData key="p13nData" 
+                        value='\{"columnKey": "Amount","columnIndex":"2", "leadingProperty": "Amount"}' /> -->
+                </customData>
+                    <Text text="{i18n>payments}" />
+                </Column>
+                  <Column minScreenWidth="Tablet" demandPopin="true" hAlign = "Right">
+                    <customData>
+                    <!-- <core:CustomData key="p13nData" 
+                        value='\{"columnKey": "Amount","columnIndex":"2", "leadingProperty": "Amount"}' /> -->
+                </customData>
+                    <Text text="{i18n>outstanding}" />
+                </Column>
+                 <Column minScreenWidth="Tablet" demandPopin="true" hAlign = "Right">
+                    <customData>
+                    <!-- <core:CustomData key="p13nData" 
+                        value='\{"columnKey": "Amount","columnIndex":"2", "leadingProperty": "Amount"}' /> -->
+                </customData>
+                    <Text text="{i18n>plan}" />
                 </Column>
             </columns>
             <!-- <ColumnListItem vAlign="Middle">

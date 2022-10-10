@@ -26,22 +26,31 @@ sap.ui.define([], function () {
             let sRetrun = "";
             if (sValue) {
                 switch (sValue) {
-                    case 'L' :
-                        sRetrun = 'Loan Partners'
+                    case 'DM' :
+                        sRetrun = 'Direct Material'
                         break;
                     case 'SL' :
                         sRetrun = 'Salaries'
                         break;
-                    case 'G' :
-                        sRetrun = 'PayU and Razorpay'
+                    case 'TX' :
+                        sRetrun = 'Taxes'
                         break;
-                    case 'E' :
-                        sRetrun = 'Exports'
+                    case 'RT' :
+                        sRetrun = 'Rent'
                         break;
-                    case 'N' :
-                        sRetrun = 'NACH(EE Bytes)'
+                    case 'AD' :
+                        sRetrun = 'Advertisement'
                         break;
-                    case 'O' :
+                    case 'OA' :
+                        sRetrun = 'Other Investments'
+                        break;   
+                    case 'TA' :
+                        sRetrun = 'Transport / Accommodation'
+                        break;   
+                    case 'BT' :
+                        sRetrun = 'BTC'
+                        break;   
+                    case 'OT' :
                         sRetrun = 'Others'
                         break;   
                 }
@@ -58,6 +67,16 @@ sap.ui.define([], function () {
                 return sValue.toLocaleDateString();
             } else if (sValue.length === 6) {
                 return sValue.substr(0,2) + "/" + sValue.substr(2,6);
+            }
+        },
+        getOustandingAmount: function (exp, pay) {
+            if (exp) {
+                if (!pay) {
+                    pay = 0;
+                } else {
+                    pay = parseFloat(pay);
+                }
+                return (parseFloat(exp) - pay).toFixed(2);
             }
         }
 

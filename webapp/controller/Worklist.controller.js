@@ -179,7 +179,7 @@ sap.ui.define([
 			// oBinding.filter(aFilters);
             let sFlag = this.getModel("worklistView").getProperty("/Flag");
             let oParams = {
-                entity:sFlag === '001' ?  "/ZPayments" :  "/ZPayments_monthly" ,
+                entity:sFlag === '001' ?  "/ZPayments" :  "/Zpayment_monthly" ,
                 filters: [aFilters] 
             }
             this.bindTableItems(oParams);
